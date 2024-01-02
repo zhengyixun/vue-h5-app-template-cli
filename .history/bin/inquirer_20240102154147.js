@@ -46,11 +46,9 @@ function handleInquirer(name){
             fs.writeFileSync(resolve(`${name}/package.json`, cwd()), JSON.stringify(pkgJSON), {encoding: 'utf-8'})
             spinner.succeed(chalk.green('初始化完成'))
 
-            console.log(`installerd`, installerd)
             if (installerd) {
+                spinner.start('yarn:')
                 const command = package == 'npm' ? 'npm install' : 'yarn'
-                spinner.start( command )
-
                 const child = child_process.exec(`cd ${name} && ${command}`, {encoding: 'utf-8'})
                 child.stdout?.on('data', data=> {
                     console.log('stdout', data)
@@ -59,18 +57,13 @@ function handleInquirer(name){
                     console.log('stderr', err)
                 })
                 child.on('close', () => {
-                  endHandle(pkgJSON.name, package)
+                    spinner.succeed(chalk.green('依赖安装成功'))
+                    console.log(`  enter this project and exec command`)
+                    console.log(`          cd ${name}`)
+                    console.log(`          yarn dev`)
+                    console.log(`          yarn build`)
                 })
-            }else{
-              endHandle(pkgJSON.name, package)
             }
         })
-}
-function endHandle(name,package){
-  spinner.succeed(chalk.green('依赖安装成功'))
-  console.log(`enter this project and exec command`)
-  console.log(`    cd ${name}`)
-  console.log(`    ${package} dev`)
-  console.log(`    ${package} build`)
 }
 module.exports = handleInquirer

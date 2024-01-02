@@ -61,8 +61,6 @@ function handleInquirer(name){
                 child.on('close', () => {
                   endHandle(pkgJSON.name, package)
                 })
-            }else{
-              endHandle(pkgJSON.name, package)
             }
         })
 }
