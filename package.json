@@ -1,0 +1,26 @@
+{
+    "name": "vue-h5-app-template-cli",
+    "version": "1.0.2",
+    "description": "业务级vue脚手架模板",
+    "main": "bin/index.js",
+    "scripts": {
+      "test": "echo \"Error: no test specified\" && exit 1",
+      "build": "rollup --config"
+    },
+    "bin": {
+      "vue-h5-app-template-cli": "./bin/index.js"
+    },
+    "author": "sygu",
+    "license": "ISC",
+    "homepage": "https://github.com/zhengyixun/vue-h5-app-template.git",
+    "dependencies": {
+      "chalk": "^3.0.0",
+      "commander": "^11.0.0",
+      "download-git-repo": "^3.0.2",
+      "figlet": "^1.6.0",
+      "fs": "^0.0.1-security",
+      "inquirer": "^8.2.6",
+      "ora": "^5.4.0",
+      "util": "^0.12.5"
+    }
+  }
