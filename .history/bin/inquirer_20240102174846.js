@@ -16,7 +16,7 @@ function handleInquirer(name){
     // 输入相关信息
     inquirer.prompt([
       {
-        type: 'list',
+        type: 'input',
         message:'请选择模板名称',
         default: name,      // 模板名称
         name: 'templateName',

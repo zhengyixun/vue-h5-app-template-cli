@@ -1,7 +1,7 @@
 {
     "name": "vue-h5-app-template-cli",
-    "version": "1.0.5",
-    "description": "业务级vue脚手架",
+    "version": "1.0.4",
+    "description": "业务级vue脚手架模板",
     "main": "bin/index.js",
     "scripts": {
       "test": "echo \"Error: no test specified\" && exit 1",

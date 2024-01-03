@@ -9,14 +9,14 @@ const child_process = require('child_process')
 const {promisify} = require('util');
 const download = promisify(require('download-git-repo'))
 const templateList = {
-  'vue-front-mobile-template': 'https://github.com/zhengyixun/vue-h5-app-template.git', // 移动端H5模板
-  'vue-front-cockpit-template': 'https://github.com/zhengyixun/vue-front-cockpit-template.git', // 驾驶舱模板 
+  'vue-front-mobile-template': 'https://github.com/zhengyixun/vue-h5-app-template.git', // 业务级vue移动端脚手架
+  'vue-front-cockpit-template': 'https://github.com/zhengyixun/vue-front-cockpit-template.git'
 }
 function handleInquirer(name){
     // 输入相关信息
     inquirer.prompt([
       {
-        type: 'list',
+        type: 'input',
         message:'请选择模板名称',
         default: name,      // 模板名称
         name: 'templateName',
@@ -59,7 +59,7 @@ function handleInquirer(name){
 
             spinner.succeed( `installerd${installerd}` )
             if (installerd) {
-                const command = package == 'npm' ? 'npm install' : 'yarn install'
+                const command = package == 'npm' ? 'npm install' : 'yarn'
                 spinner.start( command )
 
                 const child = child_process.exec(`cd ${name} && ${command}`, {encoding: 'utf-8'})
