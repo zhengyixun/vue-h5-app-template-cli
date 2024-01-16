@@ -11,7 +11,7 @@ const download = promisify(require('download-git-repo'))
 const templateList = {
   'vue-front-mobile-template': 'https://github.com/zhengyixun/vue-h5-app-template.git', // 移动端H5模板
   'vue-front-cockpit-template': 'https://github.com/zhengyixun/vue-front-cockpit-template.git', // 驾驶舱模板
-  'qiankun-micro-front-template': 'https://github.com/zhengyixun/micro-frontend.git', // qiankun 模板
+  'qiankun-main-app-template': 'https://github.com/zhengyixun/micro-frontend.git',// qiankun 模板
 }
 // 
 function handleInquirer(name){
